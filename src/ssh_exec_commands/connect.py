@@ -34,12 +34,12 @@ def connect_ssh(config: Config):
         for command_info in config.command_list:
             execute_commands(channel, command_info)
 
-        channel.close()
         logger.info(f"Exit from {config.ip_address}.")
 
     except Exception as e:
         logger.trace(e)
     finally:
+        channel.close()
         client.close()
 
 
@@ -70,4 +70,4 @@ def execute_commands(channel: paramiko.Channel, command_info: CommandInfo):
         if stderr_data:
             logger.info(stderr_data)
     except Exception as e:
-        logger.trace("e")
+        logger.trace(e)
