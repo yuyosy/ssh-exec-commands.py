@@ -6,6 +6,8 @@ authors = [
     { name = "yuyosy", email = "y-ysss@outlook.com" }
 ]
 dependencies = [
+    "paramiko>=3.4.0",
+    "loguru>=0.7.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
